@@ -1,24 +1,45 @@
-#pragma once
-#include <string>
-#define stdstr std::string
+#pragma     once
+#include    <string>
+#include    <vector>
+#define     stdstr  std::string
 
-typedef enum toktype {
+enum tokType {
     IDENTIFIER,
+    ASSIGN,
     EQUAL,
-    ADDITION,
     SUBTRACTION,
+    ADDITION,
     DIVISION,
     MULTIPLICATION,
     EXPONENTATION,
-    LITERALNUM,
-    LITERALSTR
-} toktype;
+    m_TOTAL
+};
 
 typedef struct lexeme {
-    toktype tok;
-    int val;
+    tokType tok;
+    int     val;
 } lexeme;
 
-lexeme lexstr(stdstr str) {
+typedef struct s_tokenLookup {
+    tokType     tok;
+    std::string equiv;
+} s_tokenLookup;
+
+s_tokenLookup tokenLookup[m_TOTAL] = {
+    {IDENTIFIER, NULL},
+    {ASSIGN, "="},
+    {EQUAL, "=="},
+    {SUBTRACTION, "-"},
+    {ADDITION, "+"},
+    {DIVISION, "/"},
+    {MULTIPLICATION, "*"},
+    {EXPONENTATION, "**"},
+};
+
+lexeme lexstr(
+    stdstr  str, 
+    int     attrVal
+) {
+    lexeme ret;
     
 }
