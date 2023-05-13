@@ -9,6 +9,6 @@ s_iout get_ctx() {
 }
 
 void help() {
-    olog(get_ctx(), "gemlang v", VMAJ, ".", VMIN, ".", VPATCH, "\n");
-    olog(get_ctx(), "Usage: gemlang [options] <file>\n");
+    olog(get_ctx(), "gemlang v", VMAJ, ".", VMIN, ".", VPATCH);
+    olog(get_ctx(), "Usage: gemlang [options] <file>");
 }
