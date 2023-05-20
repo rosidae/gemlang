@@ -1,5 +1,6 @@
 #pragma     once
 #include    "def.hpp"
+#include    "strut.hpp"
 
 enum token_types {
     E_IDENTIFIER,
@@ -40,6 +41,7 @@ lexeme lexstr(
     int     _attr_val
 ) {
     lexeme ret = { E_IDENTIFIER, _attr_val, _str };
+    _str = ws_trim(_str);
     for (auto i: token_lookup) {
         if ( _str==i.equiv ){
             ret.tok = i.tok;

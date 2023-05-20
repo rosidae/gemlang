@@ -7,7 +7,7 @@ s_iout get_ctx() {
     return {"gemlang"};
 }
 
-cexpr_void help() {
+void help() {
     olog(get_ctx(), "gemlang v", VMAJ, ".", VMIN, ".", VPATCH);
     olog(get_ctx(), "Usage: gemlang [options] <file>");
 }
