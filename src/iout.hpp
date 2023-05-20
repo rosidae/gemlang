@@ -1,10 +1,8 @@
-#pragma once
-#include "def.hpp"
-#include <iostream>
-#include <utility>
+#pragma     once
+#include    "def.hpp"
 
 typedef struct s_iout {
-    cstr name;
+    const_str name;
 } s_iout;
 
 template<typename... T>

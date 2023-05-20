@@ -1,3 +1,10 @@
 #pragma     once
-#define     cstr    const char*
-#define     cevoid  constexpr void
+#define     const_str    const char*
+#define     cexpr_void  constexpr void
+#include    <cstring>
+#include    <string>
+#include    <iostream>
+#include    <vector>
+#include    <cmath>
+#include    <filesystem>
+#include    <utility>

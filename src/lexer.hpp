@@ -1,6 +1,4 @@
 #pragma     once
-#include    <vector>
-#include    <filesystem>
 #include    "def.hpp"
 
 enum token_types {
@@ -18,12 +16,12 @@ enum token_types {
 typedef struct lexeme {
     token_types tok;
     int     val;
-    cstr    lexin;
+    const_str    lexin;
 } lexeme;
 
 typedef struct s_token_lookup {
     token_types     tok;
-    cstr        equiv;
+    const_str        equiv;
 } s_token_lookup;
 
 s_token_lookup token_lookup[m_TOTAL] = {
@@ -38,7 +36,7 @@ s_token_lookup token_lookup[m_TOTAL] = {
 };
 
 lexeme lexstr(
-    cstr    _str, 
+    const_str    _str, 
     int     _attr_val
 ) {
     lexeme ret = { E_IDENTIFIER, _attr_val, _str };
@@ -51,7 +49,7 @@ lexeme lexstr(
 }
 
 std::vector<lexeme> lex_file(
-    cstr    _path
+    const_str    _path
 ) {
     
 }
