@@ -16,13 +16,13 @@ enum token_types {
 
 typedef struct lexeme {
     token_types tok;
-    int     val;
-    const_str    lexin;
+    int         val;
+    const_str   lexin;
 } lexeme;
 
 typedef struct s_token_lookup {
     token_types     tok;
-    const_str        equiv;
+    const_str       equiv;
 } s_token_lookup;
 
 s_token_lookup token_lookup[m_TOTAL] = {
@@ -38,12 +38,11 @@ s_token_lookup token_lookup[m_TOTAL] = {
 
 lexeme lexstr(
     const_str    _str, 
-    int     _attr_val
+    int         _attr_val
 ) {
     lexeme ret = { E_IDENTIFIER, _attr_val, _str };
-    _str = ws_trim(_str);
     for (auto i: token_lookup) {
-        if ( _str==i.equiv ){
+        if ( _str==i.equiv){
             ret.tok = i.tok;
         }
     }

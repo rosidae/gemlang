@@ -18,7 +18,5 @@ int main(
     //         return 1;
     //     }
     // }
-    std::string test = "";
-    std::cin >> test;
-    std::cout << magic_enum::enum_name(lexstr(test.c_str(), 0).tok) << std::endl;
+    std::cout << lexstr("==", 1).tok << std::endl;
 }
