@@ -1,8 +1,8 @@
 #pragma     once
 #include    "def.hpp"
-#include    "strut.hpp"
+#include    "str.hpp"
 
-enum token_types {
+enum tktypes {
     E_IDENTIFIER,
     E_ASSIGN,
     E_EQUAL,
@@ -11,38 +11,38 @@ enum token_types {
     E_DIVISION,
     E_MULTIPLICATION,
     E_EXPONENTATION,
-    m_TOTAL
+    M_TOTAL
 };
 
 typedef struct lexeme {
-    token_types tok;
+    tktypes     tok;
     int         val;
     const_str   lexin;
 } lexeme;
 
-typedef struct s_token_lookup {
-    token_types     tok;
+typedef struct s_tklookup {
+    tktypes         tok;
     const_str       equiv;
-} s_token_lookup;
+} s_tklookup;
 
-s_token_lookup token_lookup[m_TOTAL] = {
-    { E_IDENTIFIER,        NULL },
-    { E_ASSIGN,            "=" },
-    { E_EQUAL,             "==" },
-    { E_SUBTRACTION,       "-" },
-    { E_ADDITION,          "+" },
-    { E_DIVISION,          "/" },
-    { E_MULTIPLICATION,    "*" },
-    { E_EXPONENTATION,     "**" },
+s_tklookup tklookup[M_TOTAL] = {
+    { E_IDENTIFIER,         NULL },
+    { E_ASSIGN,             "=" },
+    { E_EQUAL,              "==" },
+    { E_SUBTRACTION,        "-" },
+    { E_ADDITION,           "+" },
+    { E_DIVISION,           "/" },
+    { E_MULTIPLICATION,     "*" },
+    { E_EXPONENTATION,      "**" },
 };
 
 lexeme lexstr(
-    const_str    _str, 
-    int         _attr_val
+    const_str   str, 
+    int         attrval
 ) {
-    lexeme ret = { E_IDENTIFIER, _attr_val, _str };
-    for (auto i: token_lookup) {
-        if ( _str==i.equiv){
+    lexeme ret = { E_IDENTIFIER, attrval, str };
+    for (auto i: tklookup) {
+        if (str == i.equiv){
             ret.tok = i.tok;
         }
     }
@@ -52,5 +52,5 @@ lexeme lexstr(
 std::vector<lexeme> lex_file(
     const_str    _path
 ) {
-    
+    std::vector<char*> lines = 
 }

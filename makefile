@@ -6,3 +6,7 @@ debug:
 
 run:
 	./build/gcm.exe
+
+clean: 
+	rm build/gcm.exe
+	rm gcm.exe.stackdump

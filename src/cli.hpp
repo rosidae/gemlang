@@ -1,6 +1,6 @@
 #pragma     once
 #include    "def.hpp"
-#include    "iout.hpp"
+#include    "io.hpp"
 #include    "version.hpp"
 
 s_iout get_ctx() {
@@ -8,6 +8,6 @@ s_iout get_ctx() {
 }
 
 void help() {
-    olog(get_ctx(), "gemlang v", VMAJ, ".", VMIN, ".", VPATCH);
-    olog(get_ctx(), "Usage: gemlang [options] <file>");
+    ctxinfo(get_ctx(), "gemlang v", VMAJ, ".", VMIN, ".", VPATCH);
+    ctxinfo(get_ctx(), "Usage: gemlang [options] <file>");
 }
